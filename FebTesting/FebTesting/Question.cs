@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FebTesting.Enums;
 
 namespace FebTesting;
 
@@ -16,7 +17,9 @@ public class Question
 
     public string? Answer { get; set; }
 
-    public Question(int chapter, int number, string questionText, string answer)
+    public QuestionType Type { get; set; }
+
+    public Question(int chapter, int number, string questionText, string answer, QuestionType type)
     {
         if (questionText == null) throw new ArgumentNullException(nameof(questionText));
         if (answer == null) throw new ArgumentNullException(nameof(answer));
@@ -25,5 +28,6 @@ public class Question
         Number = number;
         QuestionText = questionText;
         Answer = answer;
+        Type = type;
     }
 }
