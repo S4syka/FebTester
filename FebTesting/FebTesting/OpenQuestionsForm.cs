@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FebTesting
 {
-    public partial class Form1 : Form
+    public partial class OpenQuestionsForm : Form
     {
-        public Form1()
+        public OpenQuestionsForm()
         {
             InitializeComponent();
         }
