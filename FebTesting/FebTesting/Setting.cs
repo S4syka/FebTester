@@ -6,18 +6,11 @@ using System.Threading.Tasks;
 
 namespace FebTesting;
 
-public class Setting
+public static class Setting
 {
-    public bool Randomize { get; private set; }
+    public static bool Randomize { get; set; }
 
-    public int Chapter { get; private set; }
+    public static int Chapter { get; set; }
 
-    public bool OnlyIncorrectAnswers { get; private set; }
-
-    public Setting(bool randomize, int chapter, bool onlyIncorrectAnswers)
-    {
-        Randomize = randomize;
-        Chapter = chapter;
-        OnlyIncorrectAnswers = onlyIncorrectAnswers;
-    }
+    public static bool OnlyIncorrectAnswers { get; set; }
 }
