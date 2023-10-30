@@ -183,7 +183,7 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Name = "ClosedQuestionsForm";
-            Text = "Form1";
+            Text = "Closed Questions";
             ResumeLayout(false);
             PerformLayout();
         }
