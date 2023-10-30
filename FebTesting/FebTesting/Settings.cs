@@ -1,6 +1,6 @@
 ﻿namespace FebTesting;
 
-public static class Setting
+public static class Settings
 {
     public static bool Randomize { get; set; } = false;
 
