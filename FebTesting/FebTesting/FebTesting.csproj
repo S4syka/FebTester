@@ -9,10 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Questions\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="Questions\1.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

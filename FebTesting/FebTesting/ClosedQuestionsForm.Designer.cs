@@ -31,8 +31,8 @@
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            PagingTxt = new TextBox();
+            QuestionTxt = new TextBox();
             button4 = new Button();
             button5 = new Button();
             AnsA_btn = new Button();
@@ -52,6 +52,7 @@
             button1.Text = ">>";
             button1.TextAlign = ContentAlignment.BottomCenter;
             button1.UseVisualStyleBackColor = true;
+            button1.Click += NextBtn_Click;
             // 
             // button2
             // 
@@ -63,7 +64,7 @@
             button2.Text = "<<";
             button2.TextAlign = ContentAlignment.BottomCenter;
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            button2.Click += PrvBtn_Click;
             // 
             // button3
             // 
@@ -76,22 +77,26 @@
             button3.Text = "Settings";
             button3.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // PagingTxt
             // 
-            textBox1.Anchor = AnchorStyles.Bottom;
-            textBox1.Location = new Point(414, 472);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(65, 23);
-            textBox1.TabIndex = 3;
+            PagingTxt.Anchor = AnchorStyles.Bottom;
+            PagingTxt.Location = new Point(414, 472);
+            PagingTxt.Name = "PagingTxt";
+            PagingTxt.Size = new Size(65, 23);
+            PagingTxt.TabIndex = 3;
             // 
-            // textBox2
+            // QuestionTxt
             // 
-            textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox2.Location = new Point(12, 12);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(864, 329);
-            textBox2.TabIndex = 4;
+            QuestionTxt.AcceptsReturn = true;
+            QuestionTxt.AcceptsTab = true;
+            QuestionTxt.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            QuestionTxt.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            QuestionTxt.Location = new Point(12, 12);
+            QuestionTxt.Multiline = true;
+            QuestionTxt.Name = "QuestionTxt";
+            QuestionTxt.ReadOnly = true;
+            QuestionTxt.Size = new Size(864, 329);
+            QuestionTxt.TabIndex = 4;
             // 
             // button4
             // 
@@ -122,8 +127,10 @@
             AnsA_btn.Name = "AnsA_btn";
             AnsA_btn.Size = new Size(121, 119);
             AnsA_btn.TabIndex = 7;
+            AnsA_btn.Tag = "A";
             AnsA_btn.Text = "A";
             AnsA_btn.UseVisualStyleBackColor = true;
+            AnsA_btn.Click += CheckAnswer;
             // 
             // AnsB_btn
             // 
@@ -132,8 +139,10 @@
             AnsB_btn.Name = "AnsB_btn";
             AnsB_btn.Size = new Size(121, 119);
             AnsB_btn.TabIndex = 8;
+            AnsB_btn.Tag = "B";
             AnsB_btn.Text = "B";
             AnsB_btn.UseVisualStyleBackColor = true;
+            AnsB_btn.Click += CheckAnswer;
             // 
             // AnsC_btn
             // 
@@ -142,8 +151,10 @@
             AnsC_btn.Name = "AnsC_btn";
             AnsC_btn.Size = new Size(121, 119);
             AnsC_btn.TabIndex = 9;
+            AnsC_btn.Tag = "C";
             AnsC_btn.Text = "C";
             AnsC_btn.UseVisualStyleBackColor = true;
+            AnsC_btn.Click += CheckAnswer;
             // 
             // AnsD_btn
             // 
@@ -152,8 +163,10 @@
             AnsD_btn.Name = "AnsD_btn";
             AnsD_btn.Size = new Size(121, 119);
             AnsD_btn.TabIndex = 10;
+            AnsD_btn.Tag = "D";
             AnsD_btn.Text = "D";
             AnsD_btn.UseVisualStyleBackColor = true;
+            AnsD_btn.Click += CheckAnswer;
             // 
             // AnsE_btn
             // 
@@ -162,8 +175,10 @@
             AnsE_btn.Name = "AnsE_btn";
             AnsE_btn.Size = new Size(121, 119);
             AnsE_btn.TabIndex = 11;
+            AnsE_btn.Tag = "E";
             AnsE_btn.Text = "E";
             AnsE_btn.UseVisualStyleBackColor = true;
+            AnsE_btn.Click += CheckAnswer;
             // 
             // ClosedQuestionsForm
             // 
@@ -177,8 +192,8 @@
             Controls.Add(AnsA_btn);
             Controls.Add(button5);
             Controls.Add(button4);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(QuestionTxt);
+            Controls.Add(PagingTxt);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -193,8 +208,8 @@
         private Button button1;
         private Button button2;
         private Button button3;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox PagingTxt;
+        private TextBox QuestionTxt;
         private Button button4;
         private Button button5;
         private Button AnsA_btn;

@@ -1,6 +1,6 @@
 ﻿namespace FebTesting
 {
-    partial class TrueFalseForm
+    partial class BaseQuestionsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -35,8 +35,6 @@
             button3 = new Button();
             PrvBtn = new Button();
             NextBtn = new Button();
-            AnsTrue_btn = new Button();
-            AnsFalse_btn = new Button();
             SuspendLayout();
             // 
             // button5
@@ -46,7 +44,7 @@
             button5.Location = new Point(669, 470);
             button5.Name = "button5";
             button5.Size = new Size(101, 23);
-            button5.TabIndex = 37;
+            button5.TabIndex = 30;
             button5.Text = "Closed Questions";
             button5.UseVisualStyleBackColor = true;
             // 
@@ -57,7 +55,7 @@
             button4.Location = new Point(776, 470);
             button4.Name = "button4";
             button4.Size = new Size(101, 23);
-            button4.TabIndex = 36;
+            button4.TabIndex = 29;
             button4.Text = "OpenQuestions";
             button4.UseVisualStyleBackColor = true;
             // 
@@ -70,7 +68,7 @@
             QuestionTxt.Name = "QuestionTxt";
             QuestionTxt.ReadOnly = true;
             QuestionTxt.Size = new Size(864, 329);
-            QuestionTxt.TabIndex = 35;
+            QuestionTxt.TabIndex = 28;
             // 
             // PagingTxt
             // 
@@ -79,7 +77,7 @@
             PagingTxt.Name = "PagingTxt";
             PagingTxt.ReadOnly = true;
             PagingTxt.Size = new Size(65, 23);
-            PagingTxt.TabIndex = 34;
+            PagingTxt.TabIndex = 27;
             // 
             // button3
             // 
@@ -88,7 +86,7 @@
             button3.Location = new Point(12, 470);
             button3.Name = "button3";
             button3.Size = new Size(75, 23);
-            button3.TabIndex = 33;
+            button3.TabIndex = 26;
             button3.Text = "Settings";
             button3.UseVisualStyleBackColor = true;
             // 
@@ -98,11 +96,10 @@
             PrvBtn.Location = new Point(334, 470);
             PrvBtn.Name = "PrvBtn";
             PrvBtn.Size = new Size(75, 23);
-            PrvBtn.TabIndex = 32;
+            PrvBtn.TabIndex = 25;
             PrvBtn.Text = "<<";
             PrvBtn.TextAlign = ContentAlignment.BottomCenter;
             PrvBtn.UseVisualStyleBackColor = true;
-            PrvBtn.Click += PrvBtn_Click;
             // 
             // NextBtn
             // 
@@ -110,43 +107,16 @@
             NextBtn.Location = new Point(486, 470);
             NextBtn.Name = "NextBtn";
             NextBtn.Size = new Size(75, 23);
-            NextBtn.TabIndex = 31;
+            NextBtn.TabIndex = 24;
             NextBtn.Text = ">>";
             NextBtn.TextAlign = ContentAlignment.BottomCenter;
             NextBtn.UseVisualStyleBackColor = true;
-            NextBtn.Click += NextBtn_Click;
             // 
-            // AnsTrue_btn
-            // 
-            AnsTrue_btn.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            AnsTrue_btn.Location = new Point(13, 345);
-            AnsTrue_btn.Name = "AnsTrue_btn";
-            AnsTrue_btn.Size = new Size(396, 119);
-            AnsTrue_btn.TabIndex = 39;
-            AnsTrue_btn.Tag = "TRUE";
-            AnsTrue_btn.Text = "True";
-            AnsTrue_btn.UseVisualStyleBackColor = true;
-            AnsTrue_btn.Click += CheckAnswer;
-            // 
-            // AnsFalse_btn
-            // 
-            AnsFalse_btn.Font = new Font("Segoe UI", 30F, FontStyle.Regular, GraphicsUnit.Point);
-            AnsFalse_btn.Location = new Point(486, 345);
-            AnsFalse_btn.Name = "AnsFalse_btn";
-            AnsFalse_btn.Size = new Size(390, 119);
-            AnsFalse_btn.TabIndex = 40;
-            AnsFalse_btn.Tag = "FALSE";
-            AnsFalse_btn.Text = "False";
-            AnsFalse_btn.UseVisualStyleBackColor = true;
-            AnsFalse_btn.Click += CheckAnswer;
-            // 
-            // TrueFalseForm
+            // BaseQuestionsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(888, 503);
-            Controls.Add(AnsFalse_btn);
-            Controls.Add(AnsTrue_btn);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(QuestionTxt);
@@ -154,9 +124,8 @@
             Controls.Add(button3);
             Controls.Add(PrvBtn);
             Controls.Add(NextBtn);
-            Name = "TrueFalseForm";
-            Text = "True False Questions";
-            Click += NextBtn_Click;
+            Name = "BaseQuestionsForm";
+            Text = "BaseQuestionsForm";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -170,7 +139,5 @@
         private Button button3;
         private Button PrvBtn;
         private Button NextBtn;
-        private Button AnsTrue_btn;
-        private Button AnsFalse_btn;
     }
 }

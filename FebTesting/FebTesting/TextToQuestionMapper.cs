@@ -14,7 +14,7 @@ public class TextToQuestionMapper
     private string GetAnswer(string text)
     {
         //Answer:{GetAnswer}
-        return text.Trim().Remove(0, 7).ToUpper();
+        return text.Trim().Remove(0, 8).ToUpper();
     }
 
     private QuestionType GetAnswerType(string text)
@@ -56,6 +56,7 @@ public class TextToQuestionMapper
         }
 
         accumulatedQuestion += line;
+        accumulatedQuestion += "\n";
         while (true)
         {
             line = reader.ReadLine();
@@ -68,6 +69,7 @@ public class TextToQuestionMapper
             if (!line.StartsWith("Answer"))
             {
                 accumulatedQuestion += line;
+                accumulatedQuestion += "\n";
             }
             else
             {
@@ -114,7 +116,7 @@ public class TextToQuestionMapper
         List<Question> result = new List<Question>();
         int questionHaveToRead = 1;
 
-        string questionFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Questions", Settings.Chapter.ToString());
+        string questionFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Questions", Settings.Chapter.ToString() + ".txt");
 
         using (var reader = new StreamReader(questionFilePath))
         {
